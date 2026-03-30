@@ -203,18 +203,54 @@ A sample demo includes:
 ```
 AI-Powered-AML-Engine/
 ├── src/
-│   ├── data/                # Data ingestion & feature engineering
-│   ├── models/              # ML models & SHAP explainers
-│   ├── rules/               # Deterministic rule engine
-│   ├── llm/                 # LLM abstraction & RAG
-│   ├── decision/            # Decision engine & thresholds
-│   ├── audit/               # Audit logging & traceability
-│   └── api/                 # REST API endpoints
-├── notebooks/               # Jupyter notebooks & experiments
-├── tests/                   # Unit & integration tests
-├── config/                  # Configuration files
-├── scripts/                 # Pipeline runners & utilities
-└── docker-compose.yml       # Docker setup for local dev
+│   ├── ingestion/           # Streaming + batch ingestion (Kafka adapters)
+│   ├── features/            # Feature engineering & feature store logic
+│   ├── risk_engine/         # ML models (training + inference split)
+│   │   ├── training/
+│   │   └── inference/
+│   ├── rules_engine/        # Deterministic compliance rules
+│   ├── graph_engine/        # Network analysis
+│   ├── explainability/      # SHAP + reason codes
+│   ├── llm_layer/           # LLM abstraction + RAG pipelines
+│   ├── decision_engine/     # Thresholds, HITL logic, orchestration hooks
+│   ├── orchestration/       # Workflow engine (LangGraph / DAGs)
+│   ├── audit/               # Audit logs, lineage tracking
+│   ├── api/                 # REST / gRPC endpoints
+│   └── schemas/             # Data contracts
+│
+├── infra/                   # Infrastructure as Code
+│   ├── terraform/
+│   ├── kubernetes/
+│   └── helm/
+│
+├── deployment/              # Deployment configs
+│   ├── docker/
+│   └── k8s-manifests/
+│
+├── observability/           # Monitoring & logging configs
+│   ├── prometheus/
+│   ├── grafana/
+│   └── alerts/
+│
+├── configs/                 # Environment configs
+│   ├── dev.yaml
+│   ├── staging.yaml
+│   └── prod.yaml
+│
+├── scripts/                 # Pipeline runners
+│   ├── run_inference.py
+│   ├── run_training.py
+│   └── backfill_jobs.py
+│
+├── tests/                   # Unit, integration, contract tests
+│
+├── notebooks/               # ONLY for experimentation (non-prod)
+│
+├── docs/                    # Architecture + compliance docs
+│
+├── docker-compose.yml       # Local dev setup
+├── Makefile                 # Dev shortcuts
+└── README.md
 ``` 
 
 ## Use Cases
