@@ -1,0 +1,41 @@
+# --- API & Data Validation ---
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# --- Core Data Processing ---
+pandas
+numpy
+pyarrow
+
+# --- Machine Learning & Models ---
+scikit-learn
+xgboost
+lightgbm
+
+# --- Explainability ---
+shap
+
+# --- Streaming & Ingestion ---
+confluent-kafka
+
+# --- Graph Analysis / Network Engine ---
+networkx
+
+# --- LLM Layer & RAG Engine ---
+langchain
+langchain-core
+langchain-openai
+langgraph
+openai
+chromadb
+
+# --- Configuration & Environment ---
+pyyaml
+python-dotenv
+
+# --- Testing & Code Quality ---
+pytest
+black
+flake8
