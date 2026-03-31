@@ -3,6 +3,10 @@ from fastapi import FastAPI, HTTPException
 from fastapi.concurrency import run_in_threadpool
 from src.schemas.transaction import Transaction
 from src.orchestration.pipeline import run_pipeline
+from src.database.connection import engine, Base
+
+# Create tables in Postgres on boot
+Base.metadata.create_all(bind=engine)
 
 # Configure base root python logging
 logging.basicConfig(level=logging.INFO)
